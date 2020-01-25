@@ -4,11 +4,11 @@ services:
     image: postgres:alpine
     restart: always
     environment:
-      POSTGRES_DB: spoke
+      POSTGRES_DB: ${DB_NAME}
       POSTGRES_PASSWORD: ${DB_PASSWORD}
-      POSTGRES_USER: spoke
+      POSTGRES_USER: {DB_USER}
     volumes:
-      - postgres:/var/lib/postgresql/data
+      - /spoke/postgres:/var/lib/postgresql/data
   redis:
     image: redis:alpine
     restart: always
@@ -16,8 +16,6 @@ services:
       - redis:/data
   spoke:
     image: sema4texas/spoke
-    build:
-      context: .
     depends_on:
       - postgres
       - redis
@@ -33,6 +31,5 @@ services:
       - ./.env:/Spoke/.env
 volumes:
   postgres:
-    external: false
   redis:
     external: false
