@@ -24,7 +24,7 @@ services:
     env_file:
       - ./.env
     environment:
-      DATABASE_URL: postgres://spoke:spoke@postgres:5432/spokedev
+      DATABASE_URL: postgres://spoke:spoke@postgres:5432/spoke
       REDIS_URL: redis://redis:6379
       KNEX_MIGRATION_DIR: /spoke/build/server/migrations/
     ports:
