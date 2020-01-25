@@ -29,7 +29,23 @@ services:
       - 3000:3000
     volumes:
       - ./.env:/Spoke/.env
+    networks:
+      - reverse_proxy
+  nginx:
+    image: nginx
+    restart: always
+    volumes:
+      - ./nginx:/etc/nginx
+      - ./nginx/sites-enabled:/etc/nginx/sites-enabled
+    networks:
+      - reverse_proxy
+    ports:
+      - 80:80
+      - 443:443
+
 volumes:
   postgres:
   redis:
     external: false
+networks: 
+  reverse_proxy:
