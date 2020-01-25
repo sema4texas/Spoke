@@ -9,11 +9,15 @@ services:
       POSTGRES_USER: spoke
     volumes:
       - /spoke/postgres:/var/lib/postgresql/data
+    networks: 
+      - db_net
   redis:
     image: redis:alpine
     restart: always
     volumes:
       - redis:/data
+    networks: 
+      - db_net
   spoke:
     image: sema4texas/spoke
     depends_on:
@@ -31,6 +35,7 @@ services:
       - ./.env:/Spoke/.env
     networks:
       - reverse_proxy
+      - db_net
   nginx:
     image: nginx
     restart: always
@@ -49,3 +54,4 @@ volumes:
     external: false
 networks: 
   reverse_proxy:
+  db_net:
