@@ -15,7 +15,7 @@ services:
     volumes:
       - redis:/data
   spoke:
-    image: spokeapp/spoke
+    image: sema4texas/spoke
     build:
       context: .
     depends_on:
