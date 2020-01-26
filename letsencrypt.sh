@@ -13,7 +13,7 @@ docker-compose down;
 
 docker run -it --rm --name certbot \
   -v /spoke/letsencrypt:/etc/letsencrypt \
-  -v /spoke/var/log/letsencrypt:/var/log/letsencrypt \
+  -v /spoke/letsencypt/log/:/var/log/letsencrypt \
   -p 80:80 \
   -u 33 \
   certbot/certbot -t certonly \
@@ -23,4 +23,4 @@ docker run -it --rm --name certbot \
   --agree-tos --renew-by-default \
   -d text.sema4texas.com;
 
-docker-compose up -d
+#docker-compose up -d
