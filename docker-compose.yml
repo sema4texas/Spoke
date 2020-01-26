@@ -37,7 +37,7 @@ services:
       - reverse_proxy
       - db_net
   nginx:
-    image: nginx
+    image: nginx:alpine
     restart: always
     volumes:
       - ./nginx:/etc/nginx
