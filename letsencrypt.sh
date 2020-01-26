@@ -18,7 +18,6 @@ docker run -it --rm --name certbot \
   --email tech@sema4texas.com \
   --no-eff-email \
   --agree-tos --renew-by-default \
-  --dry-run \
   -d text.sema4texas.com;
 
 docker-compose up -d
