@@ -23,4 +23,4 @@ docker run -it --rm --name certbot \
   --agree-tos --renew-by-default \
   -d text.sema4texas.com;
 
-#docker-compose up -d
+docker-compose up -d
