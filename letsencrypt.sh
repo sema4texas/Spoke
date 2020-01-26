@@ -6,7 +6,7 @@
 # This is why we need to docker-compose down before
 # running the container to free up port 80.
 # The "-u" argument makes the container run as UID 33, 
-# which is the www-data user on Ubuntu used by Nginx.
+# which is the www-data user on Ubuntu used for web servers.
 # We don't need a random webserver running as root, eh?
 
 docker-compose down;
