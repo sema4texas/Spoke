@@ -37,6 +37,8 @@ services:
       - reverse_proxy
       - db_net
   nginx:
+    depends_on: 
+      - spoke
     image: nginx:alpine
     restart: always
     volumes:
