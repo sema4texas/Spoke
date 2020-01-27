@@ -44,6 +44,8 @@ services:
     volumes:
       - ./nginx:/etc/nginx
       - ./nginx/sites-enabled:/etc/nginx/sites-enabled
+      - /spoke/letencrypt/:/etc/letsencrypt
+
     networks:
       - reverse_proxy
     ports:

@@ -9,8 +9,7 @@
 docker-compose down;
 
 docker run -it --rm --name certbot \
-  -v /spoke/letsencrypt/lib:/var/lib/letsencrypt \
-  -v /spoke/letsencrypt/etc:/etc/letsencrypt \
+  -v /spoke/letsencrypt/:/etc/letsencrypt \
   -v /spoke/letsencrypt/log/:/var/log/letsencrypt \
   -p 80:80 \
   certbot/certbot -t certonly \
