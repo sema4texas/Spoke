@@ -39,7 +39,7 @@ services:
   nginx:
     depends_on: 
       - spoke
-    image: nginx:alpine
+    image: nginx
     restart: always
     volumes:
       - ./nginx:/etc/nginx
