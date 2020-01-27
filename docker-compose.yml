@@ -43,9 +43,7 @@ services:
     restart: always
     volumes:
       - ./nginx:/etc/nginx
-      - ./nginx/sites-enabled:/etc/nginx/sites-enabled
       - /spoke/letsencrypt/:/etc/letsencrypt
-
     networks:
       - reverse_proxy
     ports:
