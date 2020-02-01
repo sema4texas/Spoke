@@ -20,6 +20,8 @@ services:
       - db_net
   spoke:
     image: sema4texas/spoke
+    build: 
+      context: .
     depends_on:
       - postgres
       - redis
